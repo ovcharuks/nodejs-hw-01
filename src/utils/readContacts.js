@@ -5,7 +5,7 @@ export const readContacts = async () => {
   const data = await fs.readFile(PATH_DB, {
     encoding: 'utf-8',
   });
-  console.log(data);
+  console.log(JSON.parse(data));
   return JSON.parse(data);
 };
 

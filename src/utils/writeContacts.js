@@ -3,11 +3,8 @@ import * as fs from 'node:fs/promises';
 import { readContacts } from './readContacts.js';
 
 export const writeContacts = async (users) => {
-  const newContacts = readContacts().then((contacts) => {
-    contacts.push(...users);
-  });
-  await fs.writeFile(PATH_DB, JSON.stringify(newContacts, null, 2));
-  console.log(newContacts.length);
+  await fs.writeFile(PATH_DB, JSON.stringify(users, null, 2));
+  console.log(users.length);
 };
 // const newContacts = readContacts().then((cont) => {
 //   cont.push(...users);
