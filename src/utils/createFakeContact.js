@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { count } from '../scripts/generateContacts';
+import { numb } from '../scripts/generateContacts.js';
 
 export const createFakeContact = () => ({
   id: faker.string.uuid(),
@@ -10,5 +10,6 @@ export const createFakeContact = () => ({
 });
 
 export const users = faker.helpers.multiple(createFakeContact, {
-  count: count,
+  count: numb,
 });
+console.log(users);

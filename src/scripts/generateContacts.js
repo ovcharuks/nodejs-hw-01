@@ -1,9 +1,9 @@
-import { newContacts, writeContacts } from '../utils/writeContacts';
+import { newContacts, writeContacts } from '../utils/writeContacts.js';
 
-export let count;
+export let numb;
 const generateContacts = async (number) => {
-  count = number;
-  writeContacts(newContacts);
+  numb = number;
+  await writeContacts(newContacts);
 };
 
-generateContacts(5);
+generateContacts(7);
