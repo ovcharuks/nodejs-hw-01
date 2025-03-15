@@ -9,9 +9,9 @@ export const generateContacts = async (number) => {
   });
 
   const contactsData = await readContacts();
-  contactsData.push(...contactsData, ...users);
+  contactsData.push(...users);
 
   await writeContacts(contactsData);
 };
 
-generateContacts(2);
+generateContacts(5);

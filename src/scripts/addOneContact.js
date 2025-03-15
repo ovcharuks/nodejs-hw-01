@@ -9,8 +9,8 @@ export const addOneContact = async (number) => {
     count: number,
   });
   const contactsData = await readContacts();
-  contactsData.push(...contactsData, ...users);
-
+  console.log(users);
+  contactsData.push(...users);
   await writeContacts(contactsData);
 };
 
