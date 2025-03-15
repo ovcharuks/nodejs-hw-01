@@ -7,11 +7,9 @@ export const generateContacts = async (number) => {
   const users = faker.helpers.multiple(createFakeContact, {
     count: number,
   });
-
   const contactsData = await readContacts();
   contactsData.push(...users);
-
   await writeContacts(contactsData);
 };
 
-generateContacts(5);
+generateContacts(2);
