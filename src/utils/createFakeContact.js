@@ -11,4 +11,3 @@ export const createFakeContact = () => ({
 export const users = faker.helpers.multiple(createFakeContact, {
   count: 1,
 });
-console.log(users);

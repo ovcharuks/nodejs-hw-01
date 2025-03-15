@@ -4,7 +4,6 @@ import { readContacts } from './readContacts.js';
 
 export const writeContacts = async (users) => {
   await fs.writeFile(PATH_DB, JSON.stringify(users, null, 2));
-  console.log(users.length);
 };
 // const newContacts = readContacts().then((cont) => {
 //   cont.push(...users);

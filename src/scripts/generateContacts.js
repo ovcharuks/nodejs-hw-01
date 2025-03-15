@@ -3,16 +3,15 @@ import { createFakeContact } from '../utils/createFakeContact.js';
 import { writeContacts } from '../utils/writeContacts.js';
 import { readContacts } from '../utils/readContacts.js';
 
-const generateContacts = async (number) => {
+export const generateContacts = async (number) => {
   const users = faker.helpers.multiple(createFakeContact, {
     count: number,
   });
 
-  const unitedContacts = readContacts().then((data) => {
-    return data.push(...users);
-  });
+  const contactsData = await readContacts();
+  contactsData.push(...contactsData, ...users);
 
-  await writeContacts(unitedContacts);
+  await writeContacts(contactsData);
 };
 
 generateContacts(2);
